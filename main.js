@@ -23,26 +23,47 @@ function getPlayerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
-        return "It's a tie"
+        return "It's a tie!"
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || 
         (playerSelection == "paper" && computerSelection == "rock") || 
         (playerSelection == "scissors" && computerSelection == "paper")) 
     {
-        return "Player wins"
+        playerS = playerS + 1;
+        return "Player beats computer!"
     } else {
-        return "Computer wins"
+        computerS = computerS + 1;
+        return "Computer beats player!"   
     }
 
 
 
 };
 
-for (let i = 0; i < 5; i++) {
-    let playerSelection = getPlayerChoice();
-    let computerSelection = getComputerChoice();
+let playerS = 0;
+let computerS = 0;
 
-    console.log("player has chosen: " + playerSelection + " computer has chosen: " + computerSelection);
+const ps = document.querySelector('#ps');
+const cs = document.querySelector('#cs')
+const res = document.querySelector('#result');
+const buttons = document.querySelectorAll('button');
 
-    console.log(playRound(playerSelection, computerSelection));
-}
+buttons.forEach((button) => {
+
+  button.addEventListener('click', () => {
+    let result = playRound(button.id, getComputerChoice());
+    res.textContent = result;
+
+    if (playerS == 5) {
+        alert("Player wins!");
+        playerS = 0;
+        computerS = 0;
+    } else if (computerS == 5) {
+        alert("Computer wins!")
+        playerS = 0;
+        computerS = 0;
+    }
+    ps.textContent = playerS;
+    cs.textContent = computerS;
+  });
+});
 
