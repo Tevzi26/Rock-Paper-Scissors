@@ -39,6 +39,7 @@ function playRound(playerSelection, computerSelection) {
 
 };
 
+let round = 0;
 let playerS = 0;
 let computerS = 0;
 

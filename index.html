@@ -7,19 +7,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
-    <p>Player score:</p>
-    <p id="ps">0</p>
-    <p>Computer score:</p>
-    <p id="cs">0</p>
+  <div class="nav">
+    <h1>ROCK PAPER SCISSORS</h1>
+  </div>
+  <div class="round">
+    <h2>ROUND:</h2>
+    <h2>0</h2>
+  </div>
+  <div class="score">
+    <div class="player">
+      <h2>Player score:</h2>
+      <h2 id="ps">0</h2>
+    </div>
+    <div>
+      <h2 id="result"></h2>
+    </div>
+    <div class="computer">
+      <h2>Computer score:</h2>
+      <h2 id="cs">0</h2>
+    </div>
   </div>
    <div class="buttons">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-   </div>
-   <div>  
-    <p id="result"></p>
+    <div class="button"><button id="rock">🪨</button></div>
+    <div class="button"><button id="paper">📰</button></div>
+    <div class="button"><button id="scissors">✂️</button></div>
    </div>
    <script src="main.js"></script>
 </body>
